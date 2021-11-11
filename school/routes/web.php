@@ -28,7 +28,15 @@ Route::get('/admin/logout', [AdminController::class,'Logout']
 
 Route::prefix('users')->group(function(){
     //User Management All Route
-    Route::get('/user/view', [UserController::class,'UserView']
+    Route::get('/view', [UserController::class,'UserView']
     )->name('user.view');
+
+    Route::get('/add', [UserController::class, 'UserAdd']
+    )->name('users.add');
+
+
+    Route::get('/edit/{id}', [UserController::class, 'UserEdit'])->name('users.edit');
+
+    Route::get('/delete/{id}', [UserController::class, 'UserDelete'])->name('users.delete');
 });
 
