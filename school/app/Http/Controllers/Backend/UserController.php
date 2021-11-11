@@ -60,7 +60,8 @@ class UserController extends Controller
     	$data = User::find($id);
     	$data->name = $request->name;
     	$data->email = $request->email;
-        $data->role = $request->role;
+        //$data->role = $request->role;
+        $data->usertype = $request->usertype;
     	$data->save();
 
     	$notification = array(
