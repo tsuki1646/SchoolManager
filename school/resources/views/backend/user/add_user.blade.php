@@ -24,7 +24,8 @@
                                                 <div class="form-group">
                                                     <h5>User Role <span class="text-danger">*</span></h5>
                                                     <div class="controls">
-                                                        <select name="role" id="role" required="" class="form-control">
+                                                        <!-- <select name="role" id="role" required="" class="form-control"> -->
+                                                        <select name="usertype" id="usertype" required="" class="form-control">
                                                                 <option value="" selected="" disabled="">Select Role</option>
                                                                 <option value="Admin">Admin</option>
                                                                 <option value="Operator">Operator</option>                                                       
@@ -49,6 +50,15 @@
                                                     <h5>User Email <span class="text-danger">*</span></h5>
                                                     <div class="controls">
                                                         <input type="email" name="email" class="form-control" required="">  
+                                                    </div>                                              
+                                                </div>
+                                            </div> <!-- End Col Md-6 -->
+
+                                            <div class="col-md-6" >
+                                                <div class="form-group">
+                                                    <h5>Password <span class="text-danger">*</span></h5>
+                                                    <div class="controls">
+                                                        <input type="password" name="password" class="form-control" required="">  
                                                     </div>                                              
                                                 </div>
                                             </div> <!-- End Col Md-6 -->
