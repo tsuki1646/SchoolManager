@@ -1,6 +1,7 @@
 @extends('admin.admin_master')
 @section('admin')
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <div class="content-wrapper">
     <div class="container-full">
@@ -17,7 +18,7 @@
 
                             <a href="{{ route('profile.edit') }}" style="float: right;" class="btn btn-rounded btn-success mb-5"> Edit Profile</a>	
                             
-                            <h6 class="widget-user-desc">User Type : {{ $user->usertype }}</h6>
+                            <h6 class="widget-user-desc">Role : {{ $user->usertype }}</h6>
                             <h6 class="widget-user-desc">User Email : {{ $user->email }}</h6>
                         </div>
                         <div class="widget-user-image">
