@@ -27,24 +27,24 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="description-block">
-                                    <h5 class="description-header">Mobile No</h5>
-                                    <span class="description-text">{{ $user->mobile }}</span>
+                                        <h5 class="description-header">Mobile No</h5>
+                                        <span class="description-text">{{ $user->mobile }}</span>
                                     </div>
                                     <!-- /.description-block -->
                                 </div>
                                 <!-- /.col -->
                                 <div class="col-sm-4 br-1 bl-1">
                                     <div class="description-block">
-                                    <h5 class="description-header">Address</h5>
-                                    <span class="description-text">{{ $user->address }}</span>
+                                        <h5 class="description-header">Address</h5>
+                                        <span class="description-text">{{ $user->address }}</span>
                                     </div>
                                     <!-- /.description-block -->
                                 </div>
                                 <!-- /.col -->
                                 <div class="col-sm-4">
                                     <div class="description-block">
-                                    <h5 class="description-header">Gender</h5>
-                                    <span class="description-text">{{ $user->gender }}</span>
+                                        <h5 class="description-header">Gender</h5>
+                                        <span class="description-text">{{ $user->gender }}</span>
                                 </div>
                                     <!-- /.description-block -->
                                 </div>
