@@ -16,7 +16,7 @@
 				        </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <h4><strong>Fee Category : </strong>{{ $detailsData['0']['fee_cateogry']['name'] }} </h4>					
+                            <h4><strong>Fee Category : </strong>{{ $detailsData['0']['fee_category']['name'] }} </h4>					
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped">
                                     <thead class="thead-light">
