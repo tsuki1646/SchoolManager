@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\Setup\AssignSubjectController;
 use App\Http\Controllers\Backend\Setup\DesignationController;
 
 use App\Http\Controllers\Backend\Student\StudentRegController;
+use App\Http\Controllers\Backend\Student\StudentRollController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -306,6 +307,16 @@ Route::prefix('students')->group(function()
 
     Route::get('/reg/details/{student_id}', [StudentRegController::class, 'StudentRegDetails']
     )->name('student.registration.details');
+
+    // Student Roll Generate Routes 
+    Route::get('/roll/generate/view', [StudentRollController::class, 'StudentRollView']
+    )->name('roll.generate.view');
+
+    Route::get('/reg/getstudents', [StudentRollController::class, 'GetStudents']
+    )->name('student.registration.getstudents');
+
+    Route::post('/roll/generate/store', [StudentRollController::class, 'StudentRollStore']
+    )->name('roll.generate.store');
 
 });
 
