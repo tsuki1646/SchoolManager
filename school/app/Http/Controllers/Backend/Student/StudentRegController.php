@@ -79,7 +79,7 @@ class StudentRegController extends Controller
                 $studentId = $student+1;
             if ($studentId < 10) 
             {
-                    $id_no = '000'.$studentId;
+                $id_no = '000'.$studentId;
             }elseif ($studentId < 100) {
                 $id_no = '00'.$studentId;
             }elseif ($studentId < 1000) {
