@@ -86,24 +86,25 @@
     var year_id = $('#year_id').val();
     var class_id = $('#class_id').val();
      $.ajax({
-      url: "{{ route('student.registration.getstudents')}}",
-      type: "GET",
-      data: {'year_id':year_id,'class_id':class_id},
-      success: function (data) {
-        $('#roll-generate').removeClass('d-none');
-        var html = '';
-        $.each( data, function(key, v){
-          html +=
-          '<tr>'+
-          '<td>'+v.student.id_no+'<input type="hidden" name="student_id[]" value="'+v.student_id+'"></td>'+
-          '<td>'+v.student.name+'</td>'+
-          '<td>'+v.student.fname+'</td>'+
-          '<td>'+v.student.gender+'</td>'+
-          '<td><input type="text" class="form-control form-control-sm" name="roll[]" value="'+v.roll+'"></td>'+
-          '</tr>';
-        });
-        html = $('#roll-generate-tr').html(html);
-      }
+        url: "{{ route('student.registration.getstudents')}}",
+        type: "GET",
+        data: {'year_id':year_id,'class_id':class_id},
+        success: function (data) {
+            $('#roll-generate').removeClass('d-none');
+            var html = '';
+            $.each( data, function(key, v)
+            {
+                html +=
+                '<tr>'+
+                '<td>'+v.student.id_no+'<input type="hidden" name="student_id[]" value="'+v.student_id+'"></td>'+
+                '<td>'+v.student.name+'</td>'+
+                '<td>'+v.student.fname+'</td>'+
+                '<td>'+v.student.gender+'</td>'+
+                '<td><input type="text" class="form-control form-control-sm" name="roll[]" value="'+v.roll+'"></td>'+
+                '</tr>';
+            });
+            html = $('#roll-generate-tr').html(html);
+        }
     });
   });
 

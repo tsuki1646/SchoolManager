@@ -89,9 +89,25 @@
           <ul class="treeview-menu">
             <li><a href="{{ route('student.registration.view') }}"><i class="ti-more"></i>Student Registration</a></li>
             <li><a href="{{ route('roll.generate.view') }}"><i class="ti-more"></i>Roll Generate</a></li>
-            <li><a href="＃"><i class="ti-more"></i>Registration Fee </a></li>
-            <li><a href="＃"><i class="ti-more"></i>Monthly Fee </a></li>
+            <li><a href="{{ route('registration.fee.view') }}"><i class="ti-more"></i>Registration Fee </a></li>
+            <li><a href="{{ route('monthly.fee.view') }}"><i class="ti-more"></i>Monthly Fee </a></li>
             <li><a href="＃"><i class="ti-more"></i>Exam Fee </a></li>           
+          </ul>
+        </li>
+
+        <li class="treeview {{ ($prefix == '/employees')?'active':'' }}">
+          <a href="#">
+            <i data-feather="package"></i> <span>Employee Management</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li  class="{{ ($route == 'employee.registration.view')?'active':'' }}"><a href="{{ route('employee.registration.view') }}"><i class="ti-more"></i>Employee Registration</a></li>
+            <li  class="#"><a href="#"><i class="ti-more"></i>Employee Salary</a></li>
+            <li><a href="#"><i class="ti-more"></i>Employee Leave</a></li>
+            <li><a href="#"><i class="ti-more"></i>Employee Attendance</a></li>
+            <li><a href="#"><i class="ti-more"></i>Employee Monthly Salary</a></li>           
           </ul>
         </li>
 		
