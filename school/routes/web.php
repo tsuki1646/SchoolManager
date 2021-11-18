@@ -435,6 +435,16 @@ use App\Http\Controllers\Backend\Employee\MonthlySalaryController;
             Route::get('attendance/employee/details/{date}', [EmployeeAttendanceController::class, 'AttendanceDetails']
             )->name('employee.attendance.details');
 
+            // Employee Monthly Salary All Routes 
+            Route::get('monthly/salary/view', [MonthlySalaryController::class, 'MonthlySalaryView']
+            )->name('employee.monthly.salary');
+
+            Route::get('monthly/salary/get', [MonthlySalaryController::class, 'MonthlySalaryGet']
+            )->name('employee.monthly.salary.get');
+
+            Route::get('monthly/salary/payslip/{employee_id}', [MonthlySalaryController::class, 'MonthlySalaryPayslip']
+            )->name('employee.monthly.salary.payslip');
+
         }); 
 
     }); //End Middleare Auth Route
