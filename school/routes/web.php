@@ -419,6 +419,22 @@ use App\Http\Controllers\Backend\Employee\MonthlySalaryController;
             Route::get('leave/employee/delete/{id}', [EmployeeLeaveController::class, 'LeaveDelete']
             )->name('employee.leave.delete');
 
+            // Employee Attendance All Routes 
+            Route::get('attendance/employee/view', [EmployeeAttendanceController::class, 'AttendanceView']
+            )->name('employee.attendance.view');
+
+            Route::get('attendance/employee/add', [EmployeeAttendanceController::class, 'AttendanceAdd']
+            )->name('employee.attendance.add');
+
+            Route::post('attendance/employee/store', [EmployeeAttendanceController::class, 'AttendanceStore']
+            )->name('store.employee.attendance');
+
+            Route::get('attendance/employee/edit/{date}', [EmployeeAttendanceController::class, 'AttendanceEdit']
+            )->name('employee.attendance.edit');
+
+            Route::get('attendance/employee/details/{date}', [EmployeeAttendanceController::class, 'AttendanceDetails']
+            )->name('employee.attendance.details');
+
         }); 
 
     }); //End Middleare Auth Route
