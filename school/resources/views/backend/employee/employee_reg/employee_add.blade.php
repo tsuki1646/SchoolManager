@@ -120,7 +120,7 @@
                                             </div> <!-- End Col md 4 --> 
                                         </div>
 
-                                        <div class="row"> <!-- 4TH Row -->                                                  
+                                        <div class="row"> <!-- TH Row -->                                                  
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <h5>Salary <span class="text-danger">*</span></h5>
