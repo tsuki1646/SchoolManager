@@ -132,7 +132,6 @@ Route::group(['middleware' => 'prevent-back-history'],function()
             Route::get('student/class/delete/{id}', [StudentClassController::class, 'StudentClassDelete']
             )->name('student.class.delete');
 
-
             // Student Year Routes 
             Route::get('student/year/view', [StudentYearController::class, 'ViewYear']
             )->name('student.year.view');
@@ -306,13 +305,14 @@ Route::group(['middleware' => 'prevent-back-history'],function()
             Route::get('designation/delete/{id}', [DesignationController::class, 'DesignationDelete']
             )->name('designation.delete');
 
+        });
 
         /// Student Registration Routes  
         Route::prefix('students')->group(function()
         {
             Route::get('/reg/view', [StudentRegController::class, 'StudentRegView']
             )->name('student.registration.view');
-            });
+            
 
             Route::get('/reg/Add', [StudentRegController::class, 'StudentRegAdd']
             )->name('student.registration.add');
@@ -587,7 +587,6 @@ Route::group(['middleware' => 'prevent-back-history'],function()
             )->name('report.student.idcard.get');
 
         });
-
 
     }); //End Middleare Auth Route
 
