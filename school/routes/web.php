@@ -52,8 +52,8 @@ use App\Http\Controllers\Backend\Report\ResultReportController;
 |
 */
 
-// Route::group(['middleware' => 'prevent-back-history'],function()
-// {
+Route::group(['middleware' => 'prevent-back-history'],function()
+{
     Route::get('/', function () {
         return view('auth.login');
     });
@@ -591,5 +591,5 @@ use App\Http\Controllers\Backend\Report\ResultReportController;
 
     }); //End Middleare Auth Route
 
-//}); // Prevent Back Middleare
+}); // Prevent Back Middleare
 
