@@ -36,7 +36,10 @@ use App\Http\Controllers\Backend\Account\StudentFeeController;
 use App\Http\Controllers\Backend\Account\AccountSalaryController;
 use App\Http\Controllers\Backend\Account\OtherCostController;
 
-
+use App\Http\Controllers\Backend\Report\ProfitController;
+use App\Http\Controllers\Backend\Report\MarkSheetController;
+use App\Http\Controllers\Backend\Report\AttendReportController;
+use App\Http\Controllers\Backend\Report\ResultReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -502,46 +505,88 @@ use App\Http\Controllers\Backend\Account\OtherCostController;
         )->name('student.marks.getstudents');
 
         /// Account Management Routes  
-        Route::prefix('accounts')->group(function(){
+        Route::prefix('accounts')->group(function()
+        {
+            Route::get('student/fee/view', [StudentFeeController::class, 'StudentFeeView'])->name('student.fee.view');
 
-        Route::get('student/fee/view', [StudentFeeController::class, 'StudentFeeView'])->name('student.fee.view');
+            Route::get('student/fee/add', [StudentFeeController::class, 'StudentFeeAdd'])->name('student.fee.add');
 
-        Route::get('student/fee/add', [StudentFeeController::class, 'StudentFeeAdd'])->name('student.fee.add');
+            Route::get('student/fee/getstudent', [StudentFeeController::class, 'StudentFeeGetStudent'])->name('account.fee.getstudent'); 
 
-        Route::get('student/fee/getstudent', [StudentFeeController::class, 'StudentFeeGetStudent'])->name('account.fee.getstudent'); 
+            Route::post('student/fee/store', [StudentFeeController::class, 'StudentFeeStore'])->name('account.fee.store'); 
 
-        Route::post('student/fee/store', [StudentFeeController::class, 'StudentFeeStore'])->name('account.fee.store'); 
+            // Employee Salary Routes
+            Route::get('account/salary/view', [AccountSalaryController::class, 'AccountSalaryView']
+            )->name('account.salary.view');
+
+            Route::get('account/salary/add', [AccountSalaryController::class, 'AccountSalaryAdd']
+            )->name('account.salary.add');
+
+            Route::get('account/salary/getemployee', [AccountSalaryController::class, 'AccountSalaryGetEmployee']
+            )->name('account.salary.getemployee');
+
+            Route::post('account/salary/store', [AccountSalaryController::class, 'AccountSalaryStore']
+            )->name('account.salary.store');
+
+            // Other Cost Rotues 
+            Route::get('other/cost/view', [OtherCostController::class, 'OtherCostView']
+            )->name('other.cost.view');
+
+            Route::get('other/cost/add', [OtherCostController::class, 'OtherCostAdd']
+            )->name('other.cost.add');
+
+            Route::post('other/cost/store', [OtherCostController::class, 'OtherCostStore']
+            )->name('store.other.cost');
+
+            Route::get('other/cost/edit/{id}', [OtherCostController::class, 'OtherCostEdit']
+            )->name('edit.other.cost');
+
+            Route::post('other/cost/update/{id}', [OtherCostController::class, 'OtherCostUpdate']
+            )->name('update.other.cost');
+
         });
 
-        // Employee Salary Routes
-        Route::get('account/salary/view', [AccountSalaryController::class, 'AccountSalaryView']
-        )->name('account.salary.view');
+        /// Report Management All Routes  
+        Route::prefix('reports')->group(function()
+        {
+            Route::get('monthly/profit/view', [ProfitController::class, 'MonthlyProfitView']
+            )->name('monthly.profit.view');
 
-        Route::get('account/salary/add', [AccountSalaryController::class, 'AccountSalaryAdd']
-        )->name('account.salary.add');
+            Route::get('monthly/profit/datewais', [ProfitController::class, 'MonthlyProfitDatewais']
+            )->name('report.profit.datewais.get');
 
-        Route::get('account/salary/getemployee', [AccountSalaryController::class, 'AccountSalaryGetEmployee']
-        )->name('account.salary.getemployee');
+            Route::get('monthly/profit/pdf', [ProfitController::class, 'MonthlyProfitPdf']
+            )->name('report.profit.pdf');
 
-        Route::post('account/salary/store', [AccountSalaryController::class, 'AccountSalaryStore']
-        )->name('account.salary.store');
+            // MarkSheet Generate Routes 
+            Route::get('marksheet/generate/view', [MarkSheetController::class, 'MarkSheetView']
+            )->name('marksheet.generate.view');
 
-        // Other Cost Rotues 
+            Route::get('marksheet/generate/get', [MarkSheetController::class, 'MarkSheetGet']
+            )->name('report.marksheet.get');
 
-        Route::get('other/cost/view', [OtherCostController::class, 'OtherCostView']
-        )->name('other.cost.view');
+            // Attendance Report Routes 
+            Route::get('attendance/report/view', [AttendReportController::class, 'AttendReportView']
+            )->name('attendance.report.view');
 
-        Route::get('other/cost/add', [OtherCostController::class, 'OtherCostAdd']
-        )->name('other.cost.add');
+            Route::get('report/attendance/get', [AttendReportController::class, 'AttendReportGet']
+            )->name('report.attendance.get');
 
-        Route::post('other/cost/store', [OtherCostController::class, 'OtherCostStore']
-        )->name('store.other.cost');
+            // Student Result Report Routes 
+            Route::get('student/result/view', [ResultReportController::class, 'ResultView']
+            )->name('student.result.view');
 
-        Route::get('other/cost/edit/{id}', [OtherCostController::class, 'OtherCostEdit']
-        )->name('edit.other.cost');
+            Route::get('student/result/get', [ResultReportController::class, 'ResultGet']
+            )->name('report.student.result.get');
 
-        Route::post('other/cost/update/{id}', [OtherCostController::class, 'OtherCostUpdate']
-        )->name('update.other.cost');
+            // Student ID Card Routes 
+            Route::get('student/idcard/view', [ResultReportController::class, 'IdcardView']
+            )->name('student.idcard.view');
+
+            Route::get('student/idcard/get', [ResultReportController::class, 'IdcardGet']
+            )->name('report.student.idcard.get');
+
+        });
 
 
     }); //End Middleare Auth Route
