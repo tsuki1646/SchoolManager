@@ -39,8 +39,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('user.view') }}"><i class="ti-more"></i>View User</a></li>
-            <li><a href="{{ route('users.add') }}"><i class="ti-more"></i>Add User</a></li>
+            <li class="{{ ($route == 'user.view')?'active':'' }}"><a href="{{ route('user.view') }}"><i class="ti-more"></i>View User</a></li>
+            <li class="{{ ($route == 'userss.add')?'active':'' }}"><a href="{{ route('users.add') }}"><i class="ti-more"></i>Add User</a></li>
           </ul>
         </li>
         @endif
@@ -53,8 +53,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('profile.view') }}"><i class="ti-more"></i>Your Profile</a></li>
-            <li><a href="{{ route('password.view') }}"><i class="ti-more"></i>Change Password</a></li>
+            <li class="{{ ($route == 'profile.view')?'active':'' }}"><a href="{{ route('profile.view') }}"><i class="ti-more"></i>Your Profile</a></li>
+            <li class="{{ ($route == 'password.view')?'active':'' }}"><a href="{{ route('password.view') }}"><i class="ti-more"></i>Change Password</a></li>
           </ul>
         </li>
 
